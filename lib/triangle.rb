@@ -1,26 +1,25 @@
 class Triangle
 
-  attr_reader :side_one, :side_two, :side_three
+  attr_reader :a, :b, :c
 
-  def initialize(side_one, side_two, side_three)
-    @side_one = side_one
-    @side_two = side_two
-    @side_three = side_three
+  def initialize(a, b, c)
+    @a = a
+    @b = b
+    @c = c
   end
 
-
   def kind
-    form_triangle
-    if side_one == side_two && side_two == side_three
+    validate_triangle
+    if a == b && b == c
       :equilateral
-    elsif side_one == side_two || side_two == side_three || side_one == side_three
+    elsif a == b || b == c || a == c
       :isosceles
     else
       :scalene
     end
   end
 
-  def form_triangle
+  def validate_triangle
     real_triangle = [(side_one + side_two > side_three), (side_one + side_three > side_two), (side_two + side_three > side_one)]
     [side_one, side_two, side_three].each do |side|
       real_triangle << false if side <= 0
