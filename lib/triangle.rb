@@ -30,4 +30,5 @@ class Triangle
     def message
       "The sum of the lengths of any two sides of a triangle always exceeds the length of the third side. This is a principle known as the triangle inequality. Further, each side must be larger than 0"
     end
+  end
 end
