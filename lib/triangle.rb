@@ -21,7 +21,7 @@ class Triangle
   def form_triangle
     real_triangle = [(side_one + side_two > side_three), (side_one + side_three > side_two), (side_two + side_three > side_one)]
     [side_one, side_two, side_three].each do |side|
-      real_triangle << false if side = <= 0
+      real_triangle << false if side <= 0
       raise TriangleError if real_triangle.include?(flase)
     end
   end
